@@ -3,7 +3,7 @@ cakephp-bootstrap-template
 
 Baking custom templates for Code Generation
 
-PHP 5.2+, CakePHP 2.0+
+PHP 5.2+, CakePHP 2.0+<br />
 Copyright 2012, Nurulazrad Murad (https://github.com/azrad)
 
 ## Installation

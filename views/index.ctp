@@ -18,8 +18,7 @@
 ?>
 <div class="row">
   <div class="span12 <?php echo $pluralVar; ?> index">
-    <h2>
-      <?php echo "<?php echo __('{$pluralHumanName}'); ?>"; ?>
+    <div class="clearfix">
       <div class="btn-group pull-right">
         <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
           Action
@@ -42,7 +41,9 @@
           <li><?php echo "<?php echo \$this->Html->link(__('New " . $singularHumanName . "'), array('action' => 'add')); ?>"; ?></li>
         </ul>
       </div>
-    </h2>
+    </div>
+    
+    <h2><?php echo "<?php echo __('{$pluralHumanName}'); ?>"; ?></h2>
 
 
     <table class="table">

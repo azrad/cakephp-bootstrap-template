@@ -17,8 +17,7 @@
  */
 ?>
 <div class="<?php echo $pluralVar; ?> view">
-  <h2>
-    <?php echo "<?php  echo __('{$singularHumanName}'); ?>"; ?>
+  <div class="clearfix">
     <div class="btn-group pull-right">
       <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
         Action
@@ -45,7 +44,8 @@
         ?>
       </ul>
     </div>
-  </h2>
+  </div>
+  <h2><?php echo "<?php  echo __('{$singularHumanName}'); ?>"; ?></h2>
 
   <dl class="dl-horizontal">
   <?php

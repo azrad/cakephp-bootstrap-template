@@ -15,5 +15,5 @@ Copyright 2012, Nurulazrad Murad (https://github.com/azrad)
 > working_dir/app/Console/cake bake all
 
 ## Submodules
-> cd working_dir/app/Console/Templates<br />
-> git submodule add git://github.com/azrad/cakephp-bootstrap-template.git Bootstrap
+> cd working_dir<br />
+> git submodule add git://github.com/azrad/cakephp-bootstrap-template.git app/Console/Templates/Bootstrap

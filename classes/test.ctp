@@ -39,9 +39,9 @@ class <?php echo $fullClassName; ?>Test extends CakeTestCase {
  *
  * @var array
  */
-	public $fixtures = array(
-		'<?php echo join("',\n\t\t'", $fixtures); ?>'
-	);
+  public $fixtures = array(
+  '<?php echo -e join("',\n    '", $fixtures); ?>'
+  );
 
 <?php endif; ?>
 <?php if (!empty($construction)): ?>
@@ -50,23 +50,23 @@ class <?php echo $fullClassName; ?>Test extends CakeTestCase {
  *
  * @return void
  */
-	public function setUp() {
-		parent::setUp();
-<?php echo $preConstruct ? "\t\t" . $preConstruct : ''; ?>
-		$this-><?php echo $className . ' = ' . $construction; ?>
-<?php echo $postConstruct ? "\t\t" . $postConstruct : ''; ?>
-	}
+  public function setUp() {
+    parent::setUp();
+<?php echo -e $preConstruct ? "    " . $preConstruct : ''; ?>
+    $this-><?php echo $className . ' = ' . $construction; ?>
+<?php echo -e $postConstruct ? "    " . $postConstruct : ''; ?>
+  }
 
 /**
  * tearDown method
  *
  * @return void
  */
-	public function tearDown() {
-		unset($this-><?php echo $className; ?>);
+  public function tearDown() {
+    unset($this-><?php echo $className; ?>);
 
-		parent::tearDown();
-	}
+    parent::tearDown();
+  }
 
 <?php endif; ?>
 <?php foreach ($methods as $method): ?>
@@ -75,8 +75,8 @@ class <?php echo $fullClassName; ?>Test extends CakeTestCase {
  *
  * @return void
  */
-	public function test<?php echo Inflector::camelize($method); ?>() {
-	}
+  public function test<?php echo Inflector::camelize($method); ?>() {
+  }
 
 <?php endforeach; ?>
 }

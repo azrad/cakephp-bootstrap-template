@@ -71,13 +71,13 @@
       if (!empty($associationName)):
         $otherModelName = $this->_modelName($associationName);
         $otherPluralName = $this->_pluralName($associationName);
-        echo -e "    \${$otherPluralName} = \$this->{$currentModelName}->{$otherModelName}->find('list');\n";
+        echo "    \${$otherPluralName} = \$this->{$currentModelName}->{$otherModelName}->find('list');\n";
         $compact[] = "'{$otherPluralName}'";
       endif;
     endforeach;
   endforeach;
   if (!empty($compact)):
-    echo -e "    $this->set(compact(".join(', ', $compact)."));\n";
+    echo "    $this->set(compact(".join(', ', $compact)."));\n";
   endif;
 ?>
   }
@@ -117,13 +117,13 @@
         if (!empty($associationName)):
           $otherModelName = $this->_modelName($associationName);
           $otherPluralName = $this->_pluralName($associationName);
-          echo -e "    ${$otherPluralName} = \$this->{$currentModelName}->{$otherModelName}->find('list');\n";
+          echo "    ${$otherPluralName} = \$this->{$currentModelName}->{$otherModelName}->find('list');\n";
           $compact[] = "'{$otherPluralName}'";
         endif;
       endforeach;
     endforeach;
     if (!empty($compact)):
-      echo -e "    $this->set(compact(".join(', ', $compact)."));\n";
+      echo "    $this->set(compact(".join(', ', $compact)."));\n";
     endif;
   ?>
   }

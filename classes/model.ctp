@@ -50,7 +50,7 @@ class <?php echo $name ?> extends <?php echo $plugin; ?>AppModel {
 if ($useTable && $useTable !== Inflector::tableize($name)):
     $table = "'$useTable'";
     echo "/**\n * Use table\n *\n * @var mixed False or table name\n */\n";
-    echo -e "  public \$useTable = $table;\n\n";
+    echo  "  public \$useTable = $table;\n\n";
 endif;
 
 if ($primaryKey !== 'id'): ?>
@@ -75,22 +75,22 @@ if ($displayField): ?>
 
 if (!empty($validate)):
   echo "/**\n * Validation rules\n *\n * @var array\n */\n";
-  echo -e "  public \$validate = array(\n";
+  echo  "  public \$validate = array(\n";
   foreach ($validate as $field => $validations):
-    echo -e "    '$field' => array(\n";
+    echo  "    '$field' => array(\n";
     foreach ($validations as $key => $validator):
-      echo -e "      '$key' => array(\n";
-      echo -e "        'rule' => array('$validator'),\n";
-      echo -e "        //'message' => 'Your custom message here',\n";
-      echo -e "        //'allowEmpty' => false,\n";
-      echo -e "        //'required' => false,\n";
-      echo -e "        //'last' => false, // Stop validation after this rule\n";
-      echo -e "        //'on' => 'create', // Limit validation to 'create' or 'update' operations\n";
-      echo -e "      ),\n";
+      echo  "      '$key' => array(\n";
+      echo  "        'rule' => array('$validator'),\n";
+      echo  "        //'message' => 'Your custom message here',\n";
+      echo  "        //'allowEmpty' => false,\n";
+      echo  "        //'required' => false,\n";
+      echo  "        //'last' => false, // Stop validation after this rule\n";
+      echo  "        //'on' => 'create', // Limit validation to 'create' or 'update' operations\n";
+      echo  "      ),\n";
     endforeach;
-    echo -e "    ),\n";
+    echo  "    ),\n";
   endforeach;
-  echo -e "  );\n";
+  echo  "  );\n";
 endif;
 
 foreach ($associations as $assoc):
@@ -107,7 +107,7 @@ foreach (array('hasOne', 'belongsTo') as $assocType):
   if (!empty($associations[$assocType])):
     $typeCount = count($associations[$assocType]);
     echo "\n/**\n * $assocType associations\n *\n * @var array\n */";
-    echo -e "\n  public \$$assocType = array(";
+    echo  "\n  public \$$assocType = array(";
     foreach ($associations[$assocType] as $i => $relation):
       $out = "\n    '{$relation['alias']}' => array(\n";
       $out .= "      'className' => '{$relation['className']}',\n";
@@ -119,16 +119,16 @@ foreach (array('hasOne', 'belongsTo') as $assocType):
       if ($i + 1 < $typeCount) {
         $out .= ",";
       }
-      echo -e $out;
+      echo  $out;
     endforeach;
-    echo -e "\n  );\n";
+    echo  "\n  );\n";
   endif;
 endforeach;
 
 if (!empty($associations['hasMany'])):
   $belongsToCount = count($associations['hasMany']);
   echo "\n/**\n * hasMany associations\n *\n * @var array\n */";
-  echo -e "\n  public \$hasMany = array(";
+  echo  "\n  public \$hasMany = array(";
   foreach ($associations['hasMany'] as $i => $relation):
     $out = "\n    '{$relation['alias']}' => array(\n";
     $out .= "      'className' => '{$relation['className']}',\n";
@@ -146,7 +146,7 @@ if (!empty($associations['hasMany'])):
     if ($i + 1 < $belongsToCount) {
       $out .= ",";
     }
-    echo -e $out;
+    echo  $out;
   endforeach;
   echo "\n\t);\n\n";
 endif;
@@ -154,7 +154,7 @@ endif;
 if (!empty($associations['hasAndBelongsToMany'])):
   $habtmCount = count($associations['hasAndBelongsToMany']);
   echo "\n/**\n * hasAndBelongsToMany associations\n *\n * @var array\n */";
-  echo -e "\n  public \$hasAndBelongsToMany = array(";
+  echo  "\n  public \$hasAndBelongsToMany = array(";
   foreach ($associations['hasAndBelongsToMany'] as $i => $relation):
     $out = "\n    '{$relation['alias']}' => array(\n";
     $out .= "      'className' => '{$relation['className']}',\n";
@@ -174,9 +174,9 @@ if (!empty($associations['hasAndBelongsToMany'])):
     if ($i + 1 < $habtmCount) {
       $out .= ",";
     }
-    echo -e $out;
+    echo  $out;
   endforeach;
-  echo -e "\n  );\n\n";
+  echo  "\n  );\n\n";
 endif;
 ?>
 }

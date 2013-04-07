@@ -40,7 +40,7 @@ class <?php echo $fullClassName; ?>Test extends CakeTestCase {
  * @var array
  */
   public $fixtures = array(
-  '<?php echo -e join("',\n    '", $fixtures); ?>'
+  '<?php echo  join("',\n    '", $fixtures); ?>'
   );
 
 <?php endif; ?>
@@ -52,9 +52,9 @@ class <?php echo $fullClassName; ?>Test extends CakeTestCase {
  */
   public function setUp() {
     parent::setUp();
-<?php echo -e $preConstruct ? "    " . $preConstruct : ''; ?>
+<?php echo  $preConstruct ? "    " . $preConstruct : ''; ?>
     $this-><?php echo $className . ' = ' . $construction; ?>
-<?php echo -e $postConstruct ? "    " . $postConstruct : ''; ?>
+<?php echo  $postConstruct ? "    " . $postConstruct : ''; ?>
   }
 
 /**
